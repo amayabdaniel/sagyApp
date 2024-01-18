@@ -11,7 +11,7 @@ function BotonComunicate() {
       rel="noopener noreferrer"
       className="boton-dirigir-wapp"
     >
-      Comunícate con nuestros expertos
+      Necesita soporte?
     </a>
   );
 }
