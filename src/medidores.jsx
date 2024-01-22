@@ -12,7 +12,7 @@ export const medidores = {
       disponibilidad: 2, Nivel según clasificación (3 alto, 2 medio, 1 baja)
       certificacion: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
       instalacion: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
-      url: "Enlace para ver más información del medidor"
+      url: "Enlace para ver más información del medidor
     }, */
     {
       instrumento: "Medidor para agua potable chorro único",
