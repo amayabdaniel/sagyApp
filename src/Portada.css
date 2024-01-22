@@ -1,0 +1,90 @@
+* {
+  font-family: sans-serif;
+}
+
+.portada {
+  position: relative;
+  color: #00739d;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: calc(90vh - 5vh);
+  opacity: 90%;
+  text-align: left;
+  padding-left: 10%; /* Usar porcentaje para una mejor adaptabilidad */
+  background: url("./assets/images/fondo.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.portada h1,
+.portada p {
+  max-width: 65vh;
+  margin-bottom: 3vh;
+  color: #00739d;
+}
+
+.portada::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: -1;
+}
+
+.boton-iniciar {
+  width: 25vh;
+  padding: 0.5vh 3vh;
+  justify-content: center;
+  font-size: 1.5rem; /* Usar 'rem' para el tamaño de fuente para mejor escalabilidad */
+  background-color: #00b27a;
+  color: white;
+  border: solid #00b27a;
+  border-radius: 1vh;
+  z-index: 1;
+}
+
+.boton-iniciar:hover {
+  background-color: #00739d;
+  border: solid #00739d;
+}
+
+/* Para tablets */
+@media (max-width: 768px) {
+  .portada {
+    padding-left: 5%; /* Ajustar el padding con un valor porcentual */
+  }
+
+  .portada h1,
+  .portada p {
+    font-size: 110%; /* Ajustar el tamaño de fuente */
+    max-width: 80%; /* Ajustar el ancho máximo */
+  }
+
+  .boton-iniciar {
+    font-size: 1.5rem; /* Ajustar el tamaño de fuente */
+    padding: 1vh 2vh; /* Ajustar el padding */
+  }
+}
+
+/* Para móviles */
+@media (max-width: 480px) {
+  .portada {
+    padding-left: 5%; /* Ajustar el padding para pantallas pequeñas */
+  }
+
+  .portada h1,
+  .portada p {
+    font-size: 100%; /* Ajustar el tamaño de fuente */
+    max-width: 90%; /* Asegúrate de que el texto no se salga de la pantalla */
+    margin-bottom: 2vh; /* Ajustar el espacio entre elementos */
+  }
+
+  .boton-iniciar {
+    font-size: 1.2rem; /* Ajustar el tamaño de fuente */
+    padding: 0.5vh 1.5vh; /* Ajustar el padding */
+  }
+}

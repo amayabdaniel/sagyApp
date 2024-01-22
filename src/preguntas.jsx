@@ -59,6 +59,17 @@ const preguntas = [
     tipoEntrada: "numerico",
   },
 
+  {
+    categoria: "clasificacion_presupuesto",
+    titulo: "Rango de Presupuesto",
+    explicacion:
+      "Indique el rango de presupuesto que tiene asignado para la adquisición de su equipo de medición. Elija entre opciones económicas, un balance entre costo y funcionalidad, o soluciones premium con características avanzadas.",
+    opciones: [
+      { textoRespuesta: "Económico (Menor a $112.49)", valor: 3 },
+      { textoRespuesta: "Moderado (Entre $112.50 y $337.49)", valor: 2 },
+      { textoRespuesta: "Premium (Mayor a $337.50)", valor: 1 },
+    ],
+  },
   
   {
     categoria: "clasificacion_precision",
@@ -72,17 +83,6 @@ const preguntas = [
         valor: 2,
       },
       { textoRespuesta: "Baja precisión (Mayor a 1.76% de error)", valor: 1 },
-    ],
-  },
-  {
-    categoria: "clasificacion_presupuesto",
-    titulo: "Rango de Presupuesto",
-    explicacion:
-      "Indique el rango de presupuesto que tiene asignado para la adquisición de su equipo de medición. Elija entre opciones económicas, un balance entre costo y funcionalidad, o soluciones premium con características avanzadas.",
-    opciones: [
-      { textoRespuesta: "Económico (Menor a $112.49)", valor: 3 },
-      { textoRespuesta: "Moderado (Entre $112.50 y $337.49)", valor: 2 },
-      { textoRespuesta: "Premium (Mayor a $337.50)", valor: 1 },
     ],
   },
   {

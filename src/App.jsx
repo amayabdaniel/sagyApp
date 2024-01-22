@@ -11,6 +11,7 @@ import { obtenerMedidoresConClasificacion } from "./medidores";
 import { actualizarClasificacionesMedidores } from "./actualizarClasificacionesMedidores";
 import verificarValoresPreguntasNumericas from "./PreguntasNumericas";
 import PreguntasAbiertas from "./PreguntasAbiertas";
+import Portada from './Portada';
 
 function App() {
   const [preguntaActual, setPreguntaActual] = useState(0);
@@ -29,6 +30,7 @@ function App() {
   const [mostrarPreguntasNumericas, setMostrarPreguntasNumericas] =
     useState(false);
   const [valorPreguntaAbierta, setvalorPreguntaAbierta] = useState("");
+  const [mostrarPortada, setMostrarPortada] = useState(true);
 
 
   useEffect(() => {
@@ -103,7 +105,44 @@ function App() {
         setMedidoresPreguntasNumericas(medidoresPorCategoria);
         setIsMultipleOption(false);
         setPreguntaActual((current) => current + 1);
-      } else {
+      }
+      else if(categoria === "clasificacion_presupuesto"){
+
+        let medidoresParaFiltros = medidores;
+        let medidoresParaResultados = [];
+
+        for (let i = 0; i < medidoresParaFiltros.length; i++) {
+          let medidor = medidoresParaFiltros[i];
+          if (medidor.presupuesto < limitesPresupuestoTotal.limiteInferior) {
+            medidor.clasificacion_presupuesto = 3;
+          } else if (
+            medidor.presupuesto >= limitesPresupuestoTotal.limiteInferior &&
+            medidor.presupuesto <= limitesPresupuestoTotal.limiteSuperior
+          ) {
+            medidor.clasificacion_presupuesto = 2;
+          } else if (
+            medidor.presupuesto > limitesPresupuestoTotal.limiteSuperior
+          ) {
+            medidor.clasificacion_presupuesto = 1;
+          }
+        }
+
+        medidoresParaResultados = medidoresParaFiltros.filter(
+          (medidor) => medidor.clasificacion_presupuesto === opcion.valor
+        );
+
+        if (medidoresParaResultados.length === 0) {
+          setMedidoresRecomendados([]);
+          setIsExisting(false);
+          setIsFinished(true);
+        }
+        else {
+          setMedidores(medidoresParaResultados);
+          setIsMultipleOption(true);
+          setPreguntaActual((current) => current + 1);
+        }
+      }
+       else {
         setIsMultipleOption(true);
         setPreguntaActual((current) => current + 1);
       }
@@ -153,45 +192,15 @@ function App() {
 
         if (medidoresParaFiltros.length === 1) {
           break;
-        } else {
+        } else if(medidoresParaFiltros.length === 0){
+            medidoresParaFiltros = medidores;
+            continue;
+        }else {
           continue;
         }
       }
-
-      if (clave === "clasificacion_presupuesto") {
-        if (medidoresParaFiltros.length === 0) {
-          medidoresParaFiltros = medidores;
-        }
-
-        for (let i = 0; i < medidoresParaFiltros.length; i++) {
-          let medidor = medidoresParaFiltros[i];
-          if (medidor.presupuesto < limitesPresupuestoTotal.limiteInferior) {
-            medidor.clasificacion_presupuesto = 3;
-          } else if (
-            medidor.presupuesto >= limitesPresupuestoTotal.limiteInferior &&
-            medidor.presupuesto <= limitesPresupuestoTotal.limiteSuperior
-          ) {
-            medidor.clasificacion_presupuesto = 2;
-          } else if (
-            medidor.presupuesto > limitesPresupuestoTotal.limiteSuperior
-          ) {
-            medidor.clasificacion_presupuesto = 1;
-          }
-        }
-
-        medidoresParaResultados = medidoresParaFiltros.filter(
-          (medidor) => medidor.clasificacion_presupuesto === respuestasUsuario[clave]
-        );
-
-        if (medidoresParaResultados.length === 1) {
-          medidoresParaFiltros = medidoresParaResultados;
-          break;
-        } else if (medidoresParaResultados.length > 1) {
-          medidoresParaFiltros = medidoresParaResultados;
-          break;
-        } else {
-          continue;
-        }
+      else if(clave === "clasificacion_presupuesto"){
+        continue;
       }
 
       console.log("Antes del filtro los medidores que hay son: ", medidoresParaFiltros);
@@ -296,6 +305,9 @@ function App() {
   return (
     <div className="app-container">
       <Header className="header" />
+      {mostrarPortada ? (
+        <Portada manejarInicio={() => setMostrarPortada(false)} />
+      ) : (
       <div className="main-content">
         <div className="app">
           <div className="cuerpo-principal">
@@ -334,6 +346,7 @@ function App() {
           </div>
         </div>
       </div>
+      )}
       <Footer className="footer" />
     </div>
   );
