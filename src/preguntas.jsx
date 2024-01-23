@@ -15,7 +15,7 @@ const preguntas = [
     tipoMedidor: ["agua", "gas"], // Esta pregunta aparece solo para agua y gas
     titulo: "Presión de Operación Requerida",
     explicacion:
-      "Indique la presión de operación en bar. Si el valor es decimal, utilice un punto (.) para separar la parte decimal. Ejemplo: 3.5 bar.",
+      "Indique la presión de operación en bares. Si el valor es decimal, utilice un punto (.) para separar la parte decimal. Ejemplo: 3.5 bares.",
     tipoEntrada: "numerico",
   },
 

@@ -11,7 +11,7 @@ function Resultados({ medidoresRecomendados, reiniciarAplicacion, DirigirAWapp }
     if (medidor.presion && medidor.flujo) {
       detalles.push(
         <p key={`${medidorIndex}-presion`}>
-          Presión entre {medidor.presion.min} y {medidor.presion.max} bar.
+          Presión entre {medidor.presion.min} y {medidor.presion.max} bares.
         </p>
       );
       detalles.push(
