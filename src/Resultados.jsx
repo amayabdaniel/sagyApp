@@ -69,7 +69,7 @@ function Resultados({ medidoresRecomendados, reiniciarAplicacion, DirigirAWapp }
     <div className="resultados">
       {hayResultados ? (
         <>
-          <h2>Esta es la mejor opción de medidor según tus preferencias:</h2>
+          <h2>Esta es la mejor opción de medidor según sus preferencias:</h2>
           {medidoresRecomendados.map((medidor, index) => (
             <div key={index}>
               <strong>{medidor.instrumento}</strong>
