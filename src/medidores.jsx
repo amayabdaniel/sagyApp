@@ -2,18 +2,18 @@ import { clasificarTodosLosMedidores } from "./clasificacionMedidores";
 
 export const medidores = {
   agua: [
-  /*   { (para agua o gas y ubicar en el grupo adecuado)
-      instrumento: "Nombre del medidor",
-      presion: { min: 0, max: 0 }, Rango de presión mínima y máxima (Bar)
-      flujo: { min: 0, max: 0 }, Rango de flujo mínimo y máximo (m3/h)
-      precision_estimada: 3, Valor en % de error 
-      presupuesto: 100, Precio en dolar
-      soporte: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
-      disponibilidad: 2, Nivel según clasificación (3 alto, 2 medio, 1 baja)
-      certificacion: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
-      instalacion: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
-      url: "Enlace para ver más información del medidor
-    }, */
+    /*   { (para agua o gas y ubicar en el grupo adecuado)
+        instrumento: "Nombre del medidor",
+        presion: { min: 0, max: 0 }, Rango de presión mínima y máxima (Bar)
+        flujo: { min: 0, max: 0 }, Rango de flujo mínimo y máximo (m3/h)
+        precision_estimada: 3, Valor en % de error 
+        presupuesto: 100, Precio en dolar
+        soporte: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
+        disponibilidad: 2, Nivel según clasificación (3 alto, 2 medio, 1 baja)
+        certificacion: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
+        instalacion: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
+        url: "Enlace para ver más información del medidor
+      }, */
     {
       instrumento: "Medidor para agua potable chorro único",
       presion: { min: 0, max: 16 },
@@ -25,6 +25,70 @@ export const medidores = {
       certificacion: 1,
       instalacion: 1,
       url: "https://equysis.com/images/contenido/Catalogo%20Medidores%20de%20Agua20200912113152.pdf"
+    },
+    {
+      instrumento: "Contador tangencial WPI SDC Gaer®",
+      presion: { min: 0, max: 16 },
+      flujo: { min: 3.15, max: 63 },
+      precision_estimada: 0.5,
+      presupuesto: 200,
+      soporte: 3,
+      disponibilidad: 3,
+      certificacion: 3,
+      instalacion: 2,
+      url: "https://tuvalrep.com.co/producto/macromedidor-de-aguas-negras-gaer/"
+    },
+
+    {
+      instrumento: "Contador velocidad Bronce R100, Tx Magnética, 115 mm",
+      presion: { min: 0, max: 16 },
+      flujo: { min: 0.016, max: 125 },
+      precision_estimada: 2,
+      presupuesto: 160,
+      soporte: 2,
+      disponibilidad: 3,
+      certificacion: 3,
+      instalacion: 2,
+      url: "https://tuvalrep.com.co/producto/medidor-bronce-chorro-unico-metrex/"
+    },
+
+    {
+      instrumento: "Contador volumétrico Bronce R160 Tx magnético",
+      presion: { min: 0, max: 160 },
+      flujo: { min: 15.6, max: 24.9 },
+      precision_estimada: 2,
+      presupuesto: 190,
+      soporte: 3,
+      disponibilidad: 2,
+      certificacion: 3,
+      instalacion: 2,
+      url: "https://tuvalrep.com.co/producto/medidor-bronce-chorro-unico-metrex/"
+    },
+
+    {
+      instrumento: "Medidor Clase B Seco Chorro Único TCL",
+      presion: { min: 0, max: 16 },
+      flujo: { min: 0.06, max: 3.125 },
+      precision_estimada: 2,
+      presupuesto: 290,
+      soporte: 3,
+      disponibilidad: 2,
+      certificacion: 3,
+      instalacion: 2,
+      url: "https://tuvalrep.com.co/producto/medidor-clase-b-seco-chorro-unico-tcl/"
+    },
+
+    {
+      instrumento: "Medidor Plástico Chorro Único Metrex",
+      presion: { min: 16, max: 160 },
+      flujo: { min: 2.5, max: 125 },
+      precision_estimada: 2,
+      presupuesto: 290,
+      soporte: 3,
+      disponibilidad: 2,
+      certificacion: 3,
+      instalacion: 2,
+      url: "https://tuvalrep.com.co/producto/medidor-plastico-chorro-unico-metrex/"
     },
     {
       instrumento: "Medidor para agua potable de chorro múltiple MP-15",
@@ -218,18 +282,18 @@ export const medidores = {
     },
   ],
   gas: [
-      /*   { (para agua o gas y ubicar en el grupo adecuado)
-      instrumento: "Nombre del medidor",
-      presion: { min: 0, max: 0 }, Rango de presión mínima y máxima (Bar)
-      flujo: { min: 0, max: 0 }, Rango de flujo mínimo y máximo (m3/h)
-      precision_estimada: 3, Valor en % de error 
-      presupuesto: 100, Precio en dolar
-      soporte: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
-      disponibilidad: 2, Nivel según clasificación (3 alto, 2 medio, 1 baja)
-      certificacion: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
-      instalacion: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
-      url: "Enlace para ver más información del medidor"
-    }, */
+    /*   { (para agua o gas y ubicar en el grupo adecuado)
+    instrumento: "Nombre del medidor",
+    presion: { min: 0, max: 0 }, Rango de presión mínima y máxima (Bar)
+    flujo: { min: 0, max: 0 }, Rango de flujo mínimo y máximo (m3/h)
+    precision_estimada: 3, Valor en % de error 
+    presupuesto: 100, Precio en dolar
+    soporte: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
+    disponibilidad: 2, Nivel según clasificación (3 alto, 2 medio, 1 baja)
+    certificacion: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
+    instalacion: 1, Nivel según clasificación (3 alto, 2 medio, 1 baja)
+    url: "Enlace para ver más información del medidor"
+  }, */
     {
       instrumento: "Medidor para gas G1.6 tipo Diafragma",
       presion: { min: 0, max: 0.5 },
@@ -241,6 +305,54 @@ export const medidores = {
       certificacion: 3,
       instalacion: 2,
       url: "https://tuvalrep.com.co/wp-content/uploads/2022/08/FICHA-TECNICA-MEDIDOR-GAS-G-1.6-ESTANDAR-METREX.pdf"
+    },
+    {
+      instrumento: "Medidor de gas para control interno Ref. G1.6",
+      presion: { min: 0.015, max: 0.5 },
+      flujo: { min: 0.016, max: 2.5 },
+      precision_estimada: 1,
+      presupuesto: 85,
+      soporte: 1,
+      disponibilidad: 3,
+      certificacion: 1,
+      instalacion: 2,
+      url: "https://jhasupply.com.co/producto/medidor-de-gas-residencial-g16/10001/"
+    },
+    {
+      instrumento: "Medidor de gas para control interno comercial Ref. G4 con conectores de 3/4.",
+      presion: { min: 0.015, max: 0.5 },
+      flujo: { min: 0.016, max: 6 },
+      precision_estimada: 1,
+      presupuesto: 130,
+      soporte: 2,
+      disponibilidad: 3,
+      certificacion: 1,
+      instalacion: 2,
+      url: "https://jhasupply.com.co/producto/medidor-de-gas-g4-comercial-con-conectores/100003/"
+    },
+    {
+      instrumento: "Contador de gas con membrana G1.6A",
+      presion: { min: 0, max: 0.5 },
+      flujo: { min: 0.016, max: 4 },
+      precision_estimada: 0.5,
+      presupuesto: 180,
+      soporte: 3,
+      disponibilidad: 3,
+      certificacion: 2,
+      instalacion: 2,
+      url: "https://zenner.com/es/products/gas_diaphragm_g1-6a_g2-5a/"
+    },
+    {
+      instrumento: "Contadores de gas de amplio rango Atmos® WG2.5S",
+      presion: { min: 0, max: 0.5 },
+      flujo: { min: 0.016, max: 6 },
+      precision_estimada: 0.5,
+      presupuesto: 200,
+      soporte: 3,
+      disponibilidad: 3,
+      certificacion: 3,
+      instalacion: 2,
+      url: "https://zenner.com/es/products/gas_diaphragm_wg2-5s_wide-range/"
     },
     {
       instrumento: "Medidor de flujo de gas ultrasónico",
